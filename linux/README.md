@@ -28,3 +28,7 @@ $ ./ccminertaxproxy
 ## 自启动
 
 自己想办法吧，systemctl，supervisor啥的都行
+
+## 关于SSL
+
+如果要用自己的证书，请直接替换key.key和cer.crt文件，如果看不懂这句话就不要管

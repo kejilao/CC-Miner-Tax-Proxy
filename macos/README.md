@@ -24,3 +24,7 @@ $ chmod a+x ccminertaxproxy
 ``` bash
 $ ./ccminertaxproxy
 ```
+
+## 关于SSL
+
+如果要用自己的证书，请直接替换key.key和cer.crt文件，如果看不懂这句话就不要管
