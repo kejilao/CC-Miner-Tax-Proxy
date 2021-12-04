@@ -1,8 +1,16 @@
-## 更改权限
-
+## 安装
 ``` bash
-$ chmod a+x ccminertaxproxy
+apt update 
+apt install git -y
+mkdir /opt
+cd /opt
+git clone https://github.com/CaoCaoMiner/CC-Miner-Tax-Proxy.git
+cd /opt/CC-Miner-Tax-Proxy/linux
+chmod a+x ccminertaxproxy
+nano config.json
 ```
+编辑好后按Ctrl+O,再按Ctrl+X
+
 
 ## 编辑配置
 
@@ -22,12 +30,26 @@ $ chmod a+x ccminertaxproxy
 ## 运行
 
 ``` bash
-$ ./ccminertaxproxy
+./ccminertaxproxy
 ```
 
 ## 自启动
 
-自己想办法吧，systemctl，supervisor啥的都行
+``` bash
+apt install supervisor -y
+cd /etc/supervisor/conf/
+nano ccminer.conf
+```
+```
+[program:ccminertaxproxy]
+command=/opt/CC-Miner-Tax-Proxy/linux/ccminertaxproxy
+directory=/opt/CC-Miner-Tax-Proxy/linux/
+autostart=true
+autorestart=true
+```
+``` bash
+supervisorctl reload
+```
 
 ## 关于SSL
 
